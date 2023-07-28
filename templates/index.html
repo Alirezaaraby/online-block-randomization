@@ -10,7 +10,7 @@
 <body>
     <button type="button" onClick="onClick()">Click me</button>
     <p>Clicks: <a id="clicks">0</a></p>
-    <p>Group <a id="group">0</a></p>
+    <p>Group <a id="group"> Non </a></p>
 
 </body>
 <script>
@@ -24,12 +24,18 @@
             b = clicks % 4
             console.log("random generated")
             document.getElementById("group").innerHTML = state[rand_id][b];
+            document.getElementById("clicks").style.color = "black";
             document.getElementById("clicks").innerHTML = clicks + 1;
             console.log(state[rand_id][b])
         }
-
         else {
             b = clicks % 4
+            if (clicks % 4 === 3) {
+                document.getElementById("clicks").style.color = "green";
+            }
+            else{
+                document.getElementById("clicks").style.color = "black";
+            }
             document.getElementById("clicks").innerHTML = clicks + 1;
             document.getElementById("group").innerHTML = state[rand_id][b];
             console.log(state[rand_id][b])
