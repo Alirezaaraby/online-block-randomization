@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Block Randomization</title>
 </head>
+
 <body>
-    
+    <button type="button" onClick="onClick()">Click me</button>
+    <p>Clicks: <a id="clicks">0</a></p>
+    <p>Group <a id="group">0</a></p>
+
 </body>
+<script>
+    var clicks = -1;
+    state = [["A", "A", "B", "B"], ["B", "B", "A", "A"], ["A", "B", "A", "B"], ["B", "A", "B", "A"], ["A", "B", "B", "A"], ["B", "A", "A", "B"]]
+    function onClick() {
+        clicks += 1;
+
+        if (clicks % 4 === 0 || clicks === 0) {
+            rand_id = Math.floor(Math.random() * 6);
+            b = clicks % 4
+            console.log("random generated")
+            document.getElementById("group").innerHTML = state[rand_id][b];
+            document.getElementById("clicks").innerHTML = clicks + 1;
+            console.log(state[rand_id][b])
+        }
+
+        else {
+            b = clicks % 4
+            document.getElementById("clicks").innerHTML = clicks + 1;
+            document.getElementById("group").innerHTML = state[rand_id][b];
+            console.log(state[rand_id][b])
+        }
+    };
+</script>
+
 </html>
