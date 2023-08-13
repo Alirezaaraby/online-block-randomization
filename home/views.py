@@ -5,10 +5,13 @@ from random import randint
 
 
 def index(request):
+    return render(request, 'index.html')
+
+
+def patient(request):
     if request.method == "POST":
         form = PatientForm(request.POST)
         if form.is_valid():
             form.save()
 
     return render(request, 'patients.html', {})
-
