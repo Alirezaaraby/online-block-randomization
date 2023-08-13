@@ -7,4 +7,5 @@ class patient(models.Model):
     sex = models.CharField(max_length=300)
     age = models.CharField(max_length=300)
     code = models.CharField(max_length=300)
-    # created_at = models.DateTimeField(auto_now_add=True)
+    group = models.CharField(max_length=300)
+    created_at = models.DateTimeField(auto_now_add=True)
