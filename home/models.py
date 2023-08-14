@@ -2,10 +2,17 @@ from django.db import models
 
 
 class patient(models.Model):
-    name = models.CharField(max_length=300)
-    f_name = models.CharField(max_length=300)
-    sex = models.CharField(max_length=300)
-    age = models.CharField(max_length=300)
-    code = models.CharField(max_length=300)
-    group = models.CharField(max_length=300)
+    name = models.CharField(max_length=50)
+    f_name = models.CharField(max_length=50)
+    sex = models.CharField(max_length=1)
+    age = models.IntegerField()
+    code = models.IntegerField()
+    group = models.CharField(max_length=1, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+class state(models.Model):
+    first = models.CharField(max_length=1)
+    second = models.CharField(max_length=1)
+    third = models.CharField(max_length=1)
+    fourth = models.CharField(max_length=1)
