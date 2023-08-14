@@ -28,7 +28,7 @@
 
     <main class="form-signin w-100 m-auto">
         <form action="{% url 'edit.patient' data.id  %}" method="post" enctype="multipart/form-data">
-            <h1 class="h3 mb-3 fw-normal text-center">اطلاعات بیمار</h1>
+            <h1 class="h3 mb-3 fw-normal text-center">ویرایش اطلاعات بیمار</h1>
             {% csrf_token %}
 
             <input class="form-control form-control-lg" type="text" placeholder="نام" name="name" minlength="3"
