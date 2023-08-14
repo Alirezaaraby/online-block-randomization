@@ -4,7 +4,7 @@ from .forms import PatientForm
 from random import randint
 from .models import state, patient
 
-state = [
+state_list = [
     ["A", "A", "B", "B"],
     ["B", "B", "A", "A"],
     ["A", "B", "A", "B"],
@@ -25,7 +25,7 @@ def patient_handler(request):
             last_id = patient.objects.count()
 
             if last_id % 4 == 0:
-                random_state = state[randint(0, 5)]
+                random_state = state_list[randint(0, 5)]
                 state.objects.create(
                     first=random_state[0],
                     second=random_state[1],
@@ -46,14 +46,69 @@ def patient_handler(request):
                     code=code,
                     group=random_state[0],
                 )
-
-                return HttpResponse(random_state[0])
+                if random_state[0] == "A":
+                    return render(request, "a.html")
+                elif random_state[0] == "B":
+                    return render(request, "b.html")
             else:
+                latest_state = state.objects.latest("id")
+
                 if last_id % 4 == 1:
-                    pass
+                    group = latest_state.second
+                    name = request.POST.get("name")
+                    f_name = request.POST.get("f_name")
+                    sex = request.POST.get("sex")
+                    age = int(request.POST.get("age"))
+                    code = int(request.POST.get("code"))
+                    person = patient.objects.create(
+                        name=name,
+                        f_name=f_name,
+                        sex=sex,
+                        age=age,
+                        code=code,
+                        group=group,
+                    )
+                    if group == "A":
+                        return render(request, "a.html")
+                    elif group == "B":
+                        return render(request, "b.html")
                 elif last_id % 4 == 2:
-                    pass
+                    group = latest_state.third
+                    name = request.POST.get("name")
+                    f_name = request.POST.get("f_name")
+                    sex = request.POST.get("sex")
+                    age = int(request.POST.get("age"))
+                    code = int(request.POST.get("code"))
+                    person = patient.objects.create(
+                        name=name,
+                        f_name=f_name,
+                        sex=sex,
+                        age=age,
+                        code=code,
+                        group=group,
+                    )
+                    if group == "A":
+                        return render(request, "a.html")
+                    elif group == "B":
+                        return render(request, "b.html")
                 elif last_id % 4 == 3:
-                    pass
-                
+                    group = latest_state.fourth
+                    name = request.POST.get("name")
+                    f_name = request.POST.get("f_name")
+                    sex = request.POST.get("sex")
+                    age = int(request.POST.get("age"))
+                    code = int(request.POST.get("code"))
+                    person = patient.objects.create(
+                        name=name,
+                        f_name=f_name,
+                        sex=sex,
+                        age=age,
+                        code=code,
+                        group=group,
+                    )
+                    if group == "A":
+                        return render(request, "a.html")
+                    elif group == "B":
+                        return render(request, "b.html")
+
     return render(request, "patients.html", {})
