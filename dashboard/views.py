@@ -1,10 +1,14 @@
 from django.shortcuts import render, redirect
-from home.models import patient
+from home.models import patient, state
 from home.forms import PatientForm
 
 
 def index(request):
     data = patient.objects.all()
+    if request.method == "POST":
+        patient.objects.all().delete()
+        state.objects.all().delete()
+        return redirect("./")
     return render(request, "dashboard.html", {"data": data})
 
 
