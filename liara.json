@@ -1,0 +1,4 @@
+{
+  "app": "ritrandomization",
+  "disks": [{ "name": "sqlite", "mountTo": "data" }]
+}

@@ -2,10 +2,11 @@
 <html>
 
 <head>
-    <title>Person Form</title>
+    <title>افزودن بیمار</title>
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 <style>
@@ -60,7 +61,8 @@
                 <option value="F">مؤنث</option>
             </select>
 
-            <input class="form-control form-control-lg mb-1" type="number" name="code" placeholder="شماره پرونده" required>
+            <input class="form-control form-control-lg mb-1" type="number" name="code" placeholder="شماره پرونده"
+                required>
 
             <button class="btn btn-primary w-100 py-2" type="submit">ثبت</button>
         </form>

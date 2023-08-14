@@ -2,16 +2,35 @@
 <html>
 
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>گروه بیماران بی</title>
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<style>
+    .center-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        /* Adjust as needed */
+    }
+</style>
 
 <body>
-    <figure class="text-center">
-        <h1>B</h1>
-    </figure>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 bg-light center-content">
+                <h1 class="text-center" style="font-size: 64px;">B</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 bg-light center-content">
+                <a href="./patient" class="btn btn-primary" style="width: 50%;">بازگشت</a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
