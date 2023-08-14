@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>{% block title %}{% endblock %}</title>
   {% load bootstrap5 %}
   {% bootstrap_css %}
   {% bootstrap_javascript %}
 </head>
-<body>
 
-<div class="container">
-  <ul class="nav bg-info">
-    <li class="nav-item">
-      <a class="nav-link link-light" href="/">HOME</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link link-light" href="/members">MEMBERS</a>
-    </li>
-  </ul>
+<body dir="rtl">
+  <h2 class="text-center">عنوان القسم</h2>
+  <div class="table-responsive small">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">عنوان</th>
+          <th scope="col">عنوان</th>
+          <th scope="col">عنوان</th>
+          <th scope="col">عنوان</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1,001</td>
+          <td>بيانات</td>
+          <td>عشوائية</td>
+          <td>تثري</td>
+          <td>الجدول</td>
+        </tr>
 
-  {% block content %}
-  {% endblock %}
-</div>
+      </tbody>
+    </table>
+  </div>
 </body>
+
 </html>
