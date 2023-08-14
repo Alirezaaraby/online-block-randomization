@@ -9,26 +9,37 @@
 </head>
 
 <body dir="rtl">
-  <h2 class="text-center">عنوان القسم</h2>
-  <div class="table-responsive small">
-    <table class="table table-striped table-sm">
+  <h2 class="text-center">اطلاعات بیماران</h2>
+  <div class="table-responsive">
+    <table class="table table-dark">
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">عنوان</th>
-          <th scope="col">عنوان</th>
-          <th scope="col">عنوان</th>
-          <th scope="col">عنوان</th>
+          <th scope="col">نام</th>
+          <th scope="col">نام خانوادگی</th>
+          <th scope="col">سن</th>
+          <th scope="col">جنسیت</th>
+          <th scope="col">شماره پرونده</th>
+          <th scope="col">گروه</th>
+          <th scope="col">ویرایش</th>
         </tr>
       </thead>
       <tbody>
+        {% for d in data%}
         <tr>
-          <td>1,001</td>
-          <td>بيانات</td>
-          <td>عشوائية</td>
-          <td>تثري</td>
-          <td>الجدول</td>
+          <td>{{d.id}}</td>
+          <td>{{d.name}}</td>
+          <td>{{d.f_name}}</td>
+          <td>{{d.age}}</td>
+          <td>{{d.sex}}</td>
+          <td>{{d.code}}</td>
+          <td>{{d.group}}</td>
+          <td> <a href="{% url 'edit.patient' d.id %}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">
+              ویرایش</a>
+          </td>
         </tr>
+        {% endfor %}
+
 
       </tbody>
     </table>
