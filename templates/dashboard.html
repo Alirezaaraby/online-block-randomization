@@ -6,7 +6,6 @@
   {% load bootstrap5 %}
   {% bootstrap_css %}
   {% bootstrap_javascript %}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body dir="rtl">
@@ -29,7 +28,7 @@
       <tbody>
         {% for d in data%}
         <tr>
-          <td>{{d.id}}</td>
+          <td>{{forloop.counter }}</td>
           <td>{{d.name}}</td>
           <td>{{d.f_name}}</td>
           <td>{{d.age}}</td>
