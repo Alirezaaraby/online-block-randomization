@@ -8,12 +8,14 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
+    context = request.user.is_superuser
     data = patient.objects.all()
     if request.method == "POST":
         patient.objects.all().delete()
         state.objects.all().delete()
         return redirect("./")
-    return render(request, "dashboard.html", {"data": data})
+    return render(request, "dashboard.html", {"data": data, "is_superuser": context})
+
 
 @login_required
 def edit(request, id):
@@ -24,6 +26,7 @@ def edit(request, id):
         return redirect("view.patient")
 
     return render(request, "edit.html", {"data": data, "form": form})
+
 
 @login_required
 def export_to_csv(request):

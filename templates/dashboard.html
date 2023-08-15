@@ -44,12 +44,15 @@
       </tbody>
     </table>
     <div class="text-center">
+      {% if is_superuser %}
       <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#download">
         دریافت اطلاعات
       </button>
       <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
         حذف اطلاعات
       </button>
+      {% endif %}
+
     </div>
 
     <!-- Modal -->

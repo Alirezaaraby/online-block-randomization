@@ -44,6 +44,12 @@
             </p>
             <a class="btn btn-lg btn-primary" href="{% url 'view.patient' %}" role="button">نمایش اطلاعات</a>
         </div>
+        {% if is_superuser %}
+        <div class="bg-light p-5 rounded mt-5 text-center">
+            <h1>افزودن پرستار</h1>
+            <a class="btn btn-lg btn-primary mt-1" href="{% url 'register' %}" role="button">افزودن بیمار</a>
+        </div>
+        {%endif%}
     </main>
 </body>
 
