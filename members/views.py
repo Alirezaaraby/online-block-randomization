@@ -1,4 +1,4 @@
-# from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
 
@@ -13,7 +13,12 @@ def register(request):
     else:
         form = UserCreationForm()
 
-    return render(request, 'registration/register.html', {'form': form})
+    return render(request, "registration/register.html", {"form": form})
 
 
-# @login_required
+@login_required
+def profile(request):
+    return render(
+        request,
+        "profile.html"
+    )
