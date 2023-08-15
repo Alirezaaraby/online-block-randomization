@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .forms import PatientForm
 from random import randint
 from .models import state, patient
+from django.contrib.auth.decorators import login_required
 
 state_list = [
     ["A", "A", "B", "B"],
@@ -18,6 +19,7 @@ def index(request):
     return render(request, "index.html")
 
 
+@login_required
 def patient_handler(request):
     if request.method == "POST":
         form = PatientForm(request.POST)

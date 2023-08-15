@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ثبت نام</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    .form-signin {
+        max-width: 330px;
+        padding: 1rem;
+    }
+</style>
+
+<body class="d-flex align-items-center py-4 bg-body-tertiary" dir="ltr">
+    <main class="form-signin w-100 m-auto">
+        <form action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Register">
+        </form>
+    </main>
+</body>
+
+</html>

@@ -3,8 +3,10 @@ from home.models import patient, state
 from home.forms import PatientForm
 from django.http import HttpResponse
 import csv
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def index(request):
     data = patient.objects.all()
     if request.method == "POST":
@@ -13,7 +15,7 @@ def index(request):
         return redirect("./")
     return render(request, "dashboard.html", {"data": data})
 
-
+@login_required
 def edit(request, id):
     data = patient.objects.get(id=id)
     form = PatientForm(request.POST or None, instance=data)
@@ -23,7 +25,7 @@ def edit(request, id):
 
     return render(request, "edit.html", {"data": data, "form": form})
 
-
+@login_required
 def export_to_csv(request):
     patients = patient.objects.all()
     response = HttpResponse(content_type="text/csv")
