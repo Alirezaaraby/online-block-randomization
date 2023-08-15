@@ -25,7 +25,7 @@ def patient_handler(request):
         form = PatientForm(request.POST)
         if form.is_valid():
             last_id = patient.objects.count()
-
+            username = request.user.username
             if last_id % 4 == 0:
                 random_state = state_list[randint(0, 5)]
                 state.objects.create(
@@ -47,6 +47,7 @@ def patient_handler(request):
                     age=age,
                     code=code,
                     group=random_state[0],
+                    user=username,
                 )
                 if random_state[0] == "A":
                     return render(request, "a.html")
@@ -69,6 +70,7 @@ def patient_handler(request):
                         age=age,
                         code=code,
                         group=group,
+                        user=username,
                     )
                     if group == "A":
                         return render(request, "a.html")
@@ -88,6 +90,7 @@ def patient_handler(request):
                         age=age,
                         code=code,
                         group=group,
+                        user=username,
                     )
                     if group == "A":
                         return render(request, "a.html")
@@ -107,6 +110,7 @@ def patient_handler(request):
                         age=age,
                         code=code,
                         group=group,
+                        user=username,
                     )
                     if group == "A":
                         return render(request, "a.html")

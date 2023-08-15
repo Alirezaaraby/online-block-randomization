@@ -21,6 +21,7 @@
           <th scope="col">جنسیت</th>
           <th scope="col">شماره پرونده</th>
           <th scope="col">گروه</th>
+          <th scope="col">پرستار</th>
           <th scope="col">تاریخ</th>
           <th scope="col">ویرایش</th>
         </tr>
@@ -35,6 +36,7 @@
           <td>{{d.sex}}</td>
           <td>{{d.code}}</td>
           <td>{{d.group}}</td>
+          <td>{{d.user}}</td>
           <td>{{d.created_at}}</td>
           <td> <a href="{% url 'edit.patient' d.id %}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">
               ویرایش</a>

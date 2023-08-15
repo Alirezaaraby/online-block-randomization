@@ -35,10 +35,19 @@ def export_to_csv(request):
     response["Content-Disposition"] = 'attachment; filename="file.csv"'
     writer = csv.writer(response)
     writer.writerow(
-        ["name", "family name", "sex", "age", "code", "group", "registery time"]
+        [
+            "name",
+            "family name",
+            "sex",
+            "age",
+            "code",
+            "group",
+            "nurse",
+            "registery time",
+        ]
     )
     patient_fields = patients.values_list(
-        "name", "f_name", "sex", "age", "code", "group", "created_at"
+        "name", "f_name", "sex", "age", "code", "group", "user", "created_at"
     )
     for p in patients:
         writer.writerow([p.name, p.f_name, p.sex, p.age, p.code, p.group, p.created_at])

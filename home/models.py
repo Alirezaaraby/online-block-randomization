@@ -8,6 +8,7 @@ class patient(models.Model):
     age = models.IntegerField()
     code = models.IntegerField()
     group = models.CharField(max_length=1, null=False)
+    user = models.CharField(max_length=300, default="admin", null=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
 
