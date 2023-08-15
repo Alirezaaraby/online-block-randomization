@@ -44,6 +44,9 @@
       </tbody>
     </table>
     <div class="text-center">
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#download">
+        دریافت اطلاعات
+      </button>
       <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
         حذف اطلاعات
       </button>
@@ -61,11 +64,31 @@
             با تایید این فرم تمامی اطلاعات ورودی حذف میشود. آیا تایید میکنید؟
           </div>
           <div class="modal-footer">
-            <button href=type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
             <form method="post" action="{% url 'view.patient' %}">
               {% csrf_token %}
               <button type="submit" class="btn btn-danger">حذف</button>
             </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="download" tabindex="-1" aria-labelledby="download" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">دریافت اطلاعات</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <p>فرمت دریافتی خود را انتخاب کنید</p>
+            <br>
+            <a href="{% url 'csv.patient' %}" class="btn btn-success" style="width: 70%;">دریافت اطلاعات</a>
+
+          </div>
+          <div class="modal-footer">
+            <button href="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
           </div>
         </div>
       </div>
