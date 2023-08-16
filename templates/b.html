@@ -14,16 +14,19 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12 bg-light center-content">
-            <h1 class="text-center" style="font-size: 64px;">B</h1>
+
+<body dir="rtl">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 bg-light center-content">
+                <h1 class="text-center" style="font-size: 64px;">B</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 bg-light center-content">
+                <a href="{% url 'home' %}" class="btn btn-primary" style="width: 50%;">بازگشت</a>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12 bg-light center-content">
-            <a href="./" class="btn btn-primary" style="width: 50%;">بازگشت</a>
-        </div>
-    </div>
-</div>
+</body>
 {% endblock %}

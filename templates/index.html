@@ -1,29 +1,24 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-    <title>صفحه ی اصلی</title>
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-</head>
+{% block title %}صفحه ی اصلی{% endblock %}
 
-<body>
-    <div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100">
-        <!-- Title -->
-        <h1 class="text-center mt-10" style="max-width: 70%;">بررسی تاثیر داروی داپاگلیفلوزین بر پیامدهای قلبی بیماران
-            مبتلا به پرفشاری خون ریوی
-        </h1>
 
-        <!-- Image -->
-        <img src="https://raw.githubusercontent.com/filecloud1234/cloud/main/IMG_5736.PNG" alt="Your Image"
-            class="mt-10" style="max-width: 100%; max-height: 70%;">
 
-        <!-- Start Button -->
-        <a href="{% url 'profile' %}" class="btn btn-primary" style="width: 70%;">شروع</a>
-    </div>
-</body>
+{% block content %}
 
-</html>
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100">
+    <!-- Title -->
+    <h1 class="text-center mt-10" style="max-width: 70%;">بررسی تاثیر داروی داپاگلیفلوزین بر پیامدهای قلبی بیماران
+        مبتلا به پرفشاری خون ریوی
+    </h1>
+
+    <!-- Image -->
+    <img src="https://raw.githubusercontent.com/filecloud1234/cloud/main/IMG_5736.PNG" alt="Your Image" class="mt-10"
+        style="max-width: 100%; max-height: 70%;">
+
+    <!-- Start Button -->
+    <a href="{% url 'profile' %}" class="btn btn-primary" style="width: 70%;">شروع</a>
+</div>
+
+{% endblock %}

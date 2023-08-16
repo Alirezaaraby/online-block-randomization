@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-    <title>ویرایش اطلاعات بیمار</title>
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block title %} ویرایش اطلاعات بیمار{% endblock %}
 
-</head>
+{% block style %}
+
 <style>
     html,
     body {
@@ -20,25 +15,20 @@
         padding: 1rem;
     }
 </style>
+{% endblock %}
+{% block content %}
 
 <body class="d-flex align-items-center py-4 bg-body-tertiary" dir="rtl">
-
-
-
-
-
     <main class="form-signin w-100 m-auto">
         <form action="{% url 'edit.patient' data.id  %}" method="post" enctype="multipart/form-data">
             <h1 class="h3 mb-3 fw-normal text-center">ویرایش اطلاعات بیمار</h1>
             {% csrf_token %}
-
             <input class="form-control form-control-lg mb-1" type="text" placeholder="نام" name="name" minlength="3"
                 maxlength="50" value="{{data.name}}" required>
             <input class="form-control form-control-lg mb-1" type="text" name="f_name" minlength="3" maxlength="50"
                 value="{{data.f_name}}" required>
             <input class="form-control form-control-lg mb-1" type="number" name="age" placeholder="سن" min="1" max="120"
                 value="{{data.age}}" required>
-
             <select class="form-select form-select-lg mb-1" name="sex">
                 <option value="{{ data.sex }}">{{ data.sex }}</option>
                 <option value="M">مذکر</option>
@@ -50,7 +40,8 @@
 
             <button class="btn btn-primary w-100 py-2" type="submit">ثبت</button>
         </form>
+        <a class="btn btn-warning w-100 py-2 mt-1" type="submit" href="{% url 'view.patient' %}">بازگشت</a>
     </main>
 </body>
-
-</html>
+{% endblock %}
+<!-- </html> -->

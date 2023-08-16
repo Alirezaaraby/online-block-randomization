@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-    <title>افزودن بیمار</title>
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block title %} افزودن بیمار{% endblock %}
 
-</head>
+{% block style %}
 <style>
     html,
     body {
@@ -20,29 +14,11 @@
         padding: 1rem;
     }
 </style>
-<!-- <body> -->
-<!-- <h1>Person Form</h1>
-    <form action="{% url 'create.patient' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input class="input" type="text" name="name" />
-        <input class="input" type="text" name="f_name" />
-        <input class="input" type="text" name="sex" />
-        <input class="input" type="text" name="age" />
-        <input class="input" type="text" name="code" />
-        <input class="input" type="text" name="group" />
+{% endblock %}
 
-        <input type="submit" value="submit">
-
-    </form> -->
-
-<!-- </body> -->
+{% block content %}
 
 <body class="d-flex align-items-center py-4 bg-body-tertiary" dir="rtl">
-
-
-
-
-
     <main class="form-signin w-100 m-auto">
         <form action="{% url 'create.patient' %}" method="post" enctype="multipart/form-data">
             <h1 class="h3 mb-3 fw-normal text-center">اطلاعات بیمار</h1>
@@ -71,3 +47,4 @@
 </body>
 
 </html>
+{% endblock %}

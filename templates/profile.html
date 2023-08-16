@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-    <title>پروفایل کاربری</title>
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block title %}پروفایل کاربری{% endblock %}
 
-</head>
-<style>
-
-</style>
+{% block content %}
 
 <body class="d-flex align-items-center py-4 bg-body-tertiary" dir="rtl">
 
@@ -52,5 +43,4 @@
         {%endif%}
     </main>
 </body>
-
-</html>
+{% endblock %}

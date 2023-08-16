@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-  <title>داشبورد</title>
-  {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
-</head>
+{% block title %}داشبورد{% endblock %}
+
+{% block content %}
 
 <body dir="rtl">
   <h2 class="text-center">اطلاعات بیماران</h2>
@@ -101,5 +97,4 @@
 
   </div>
 </body>
-
-</html>
+{% endblock %}
